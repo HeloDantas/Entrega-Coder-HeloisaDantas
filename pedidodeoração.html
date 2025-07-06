@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>CONBAE - Congregação Batista Esperança</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+  <header>
+    <h1 id="titulo-principal">CONBAE - Congregação Batista Esperança</h1>
+    <nav>
+              <a href="#">Início</a>
+        <a href="#">Quem Somos</a>
+        <a href="#">Agenda</a>
+        <a href="#">Ministérios</a>
+        <a href="#">Contato</a>
+         </nav>
+  </header>
+
+
+  <main>
+    <section class="formularios">
+      <h2>Faça o seu pedido de oração</h2>
+         <form action="/submit" method="post">
+            <label for="nome">Nome (Opcional):</label>
+            <input type="text" id="nome" name="nome"/> </br>
+            
+            <label for="contato">Contato (Opcional)</label>
+            <input type="tel" id="contato" name="contato"/> </br>
+
+            <label for="mensagem"> Deixe aqui seu pedido de oração </label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+
+            <input type="submit" value="enviar">
+
+      </form>
+    </section>
+
+    
+    
+
+
+    </main>
+</body>
