@@ -1,0 +1,63 @@
+
+@import 'variables'; 
+
+
+@mixin breakpoint-up($size) {
+    @media (min-width: map-get($grid-breakpoints, $size)) {
+        @content;
+    }
+}
+
+@mixin media-up($breakpoint) {
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin box-shadow($level: 1) {
+    @if $level == 1 {
+        box-shadow: 0 2px 8px 0 $cor-sombra;
+    } @else if $level == 2 {
+        box-shadow: 0 4px 12px 0 $cor-sombra * 1.2; 
+    } @else if $level == 3 {
+        box-shadow: 0 8px 24px 0 $cor-sombra * 1.5; 
+    } @else {
+        box-shadow: none;
+    }
+}
+
+@mixin botao-base($bg-color: $cor-primaria, $text-color: $cor-texto-claro, $border-color: $bg-color) {
+    background-color: $bg-color;
+    border: 1px solid $border-color;
+    color: $text-color;
+    padding: 0.9rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all $transicao-normal; 
+    @include box-shadow(1); 
+
+    &:hover {
+        background-color: darken($bg-color, 10%);
+        border-color: darken($border-color, 10%);
+        transform: translateY(-3px) scale(1.02);
+        @include box-shadow(2); 
+        text-decoration: none; 
+    }
+
+    &:active {
+        transform: translateY(0);
+        @include box-shadow(1);
+    }
+}
+
+@mixin flex-center($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin no-margin-bottom {
+    margin-bottom: 0 !important;
+}

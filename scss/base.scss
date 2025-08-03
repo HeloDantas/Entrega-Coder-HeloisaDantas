@@ -1,0 +1,89 @@
+
+@import 'variables'; 
+
+body {
+    background-color: $cor-fundo-claro; 
+    font-family: $font-principal; 
+    color: $cor-texto-principal; 
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    font-size: $base-font-size; 
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-secundaria; 
+    color: $cor-primaria; 
+    text-align: center;
+    margin-bottom: $espacamento-grande * 1.5; 
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3rem;
+    @include media-up($breakpoint-md) { 
+        font-size: 4.5rem;
+    }
+    @include media-up($breakpoint-lg) {
+        font-size: 5.5rem;
+    }
+}
+
+h2 {
+    font-size: 2.2rem;
+    @include media-up($breakpoint-md) {
+        font-size: 3rem;
+    }
+    position: relative; 
+    padding-bottom: $espacamento-medio; 
+    &::after { 
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 60px; 
+        height: 4px;
+        background-color: $cor-primaria;
+        border-radius: 2px;
+    }
+}
+
+h3 {
+    font-size: 1.8rem;
+    @include media-up($breakpoint-md) {
+        font-size: 2.2rem;
+    }
+}
+
+h4 {
+    font-size: 1.4rem;
+    @include media-up($breakpoint-md) {
+        font-size: 1.6rem;
+    }
+}
+
+p {
+    margin-bottom: $espacamento-medio;
+    font-size: 1rem; 
+}
+
+a {
+    color: $cor-texto-principal; 
+    text-decoration: none;
+    transition: color $transicao-rapida; 
+
+    &:hover {
+        color: darken($cor-texto-principal, 15%); 
+        text-decoration: underline;
+    }
+}
+
+section {
+    padding: $espacamento-grande * 2 0; 
+    @include media-up($breakpoint-md) {
+        padding: $espacamento-grande * 3 0;
+    }
+}

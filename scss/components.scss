@@ -1,0 +1,107 @@
+
+
+@import 'variables';
+@import 'mixins';
+
+.btn-primary {
+    @include botao-base($cor-primaria, $cor-texto-claro, $cor-primaria); 
+    margin-top: $espacamento-grande;
+    @include media-up($breakpoint-sm) { 
+        font-size: 1rem;
+        padding: 0.7rem 2rem;
+    }
+    @include media-up($breakpoint-md) { 
+        font-size: 1.2rem;
+        padding: 0.9rem 2.5rem;
+    }
+}
+
+.agenda-item,
+.ministerio-item {
+    background-color: $cor-texto-claro; 
+    border: 1px solid $cor-borda-neutra; 
+    padding: $espacamento-medio; 
+    border-radius: 0.5rem; 
+    text-align: center;
+    transition: all $transicao-normal; 
+    @include box-shadow(1); 
+
+    &:hover {
+        background-color: lighten($cor-fundo-claro, 5%); 
+        cursor: pointer;
+        transform: translateY(-8px) scale(1.02); 
+        @include box-shadow(3); 
+    }
+
+    h4 {
+        color: $cor-destaque; 
+        font-size: 1.3rem;
+        margin-bottom: $espacamento-pequeno;
+    }
+    p {
+        color: $cor-texto-principal;
+        font-size: 0.95rem;
+        margin-bottom: 0.2rem;
+    }
+}
+
+.form-control {
+    border: 1px solid $cor-borda-neutra;
+    border-radius: 0.3rem; 
+    padding: $espacamento-medio $espacamento-medio * 1.2; 
+    font-size: 1rem;
+    transition: border-color $transicao-rapida, box-shadow $transicao-rapida;
+
+    &:focus {
+        border-color: $cor-secundaria; 
+        box-shadow: 0 0 0 0.25rem rgba($cor-secundaria, 0.25); 
+        outline: none;
+    }
+}
+
+.carousel-inner {
+    border-radius: 0.5rem;
+    overflow: hidden; 
+    @include box-shadow(2); 
+}
+
+.carousel-item img {
+    max-height: 550px; 
+    width: 100%;
+    object-fit: cover;
+    @include media-up($breakpoint-sm) {
+        max-height: 400px;
+    }
+    @include media-up($breakpoint-md) {
+        max-height: 450px;
+    }
+    @include media-up($breakpoint-lg) {
+        max-height: 550px;
+    }
+}
+
+.carousel-caption {
+    background-color: rgba($cor-fundo-escuro, 0.7); 
+    border-radius: 0.4rem; 
+    padding: $espacamento-pequeno * 2 $espacamento-medio;
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; 
+    max-width: 500px; 
+    @include media-up($breakpoint-md) {
+        width: auto;
+        max-width: none;
+    }
+
+    h5 {
+        color: $cor-texto-claro;
+        font-size: 1.4rem;
+        margin-bottom: $espacamento-pequeno;
+    }
+    p {
+        color: $cor-texto-claro;
+        font-size: 0.9rem;
+        @include no-margin-bottom; 
+    }
+}
